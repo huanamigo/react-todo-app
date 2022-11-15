@@ -27,11 +27,10 @@ function ToDoTasks(props) {
 
   return (
     <>
+      <h1>TASKS</h1>
       <div>{activeTasks.length > 0 ? activeTasks : <p>done</p>}</div>
 
-      <hr />
-
-      <p>{doneTasks.length}</p>
+      <p>COMPLETED TASKS ({doneTasks.length})</p>
       <span>{doneTasks.length > 2 ? <p>max 2</p> : null}</span>
       <div>{doneTasks.slice(0, 2)}</div>
     </>

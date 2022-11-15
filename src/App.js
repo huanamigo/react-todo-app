@@ -32,8 +32,6 @@ function App() {
   ]);
 
   const deleteTask = (id) => {
-    console.log('delete ' + id);
-
     const tasksArr = [...tasks];
     const index = tasksArr.findIndex((task) => task.id === id);
     tasksArr.splice(index, 1);
@@ -42,8 +40,6 @@ function App() {
   };
 
   const changeStatus = (id) => {
-    console.log('change ' + id);
-
     const tasksArr = [...tasks];
     const index = tasksArr.findIndex((task) => task.id === id);
 
@@ -55,15 +51,30 @@ function App() {
       tasksArr[index].doneDate = Date.now();
     }
 
-    console.log(tasksArr);
+    changeTasks(tasksArr);
+  };
+
+  const addTask = (text, date, important) => {
+    if (text.length < 2) return alert('dupa');
+
+    const newTask = {
+      id: Date.now(),
+      text: text,
+      date: date,
+      important: important,
+      active: true,
+      doneDate: null,
+    };
+
+    const tasksArr = [...tasks];
+    tasksArr.push(newTask);
 
     changeTasks(tasksArr);
   };
 
   return (
     <>
-      <TaskInput />
-      <hr />
+      <TaskInput add={addTask} />
       <ToDoTasks tasks={tasks} delete={deleteTask} change={changeStatus} />
     </>
   );

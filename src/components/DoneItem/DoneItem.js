@@ -8,7 +8,6 @@ function Item(props) {
       </button>
       <span>{props.task.text}</span>
       <span>
-        {' '}
         {props.task.active
           ? null
           : new Date(props.task.doneDate).toLocaleString()}
