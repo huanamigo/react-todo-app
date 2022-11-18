@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './App.css';
+import styles from './App.module.scss';
 import TaskInput from './components/TaskInput/TaskInput';
 import ToDoTasks from './components/ToDoTasks/ToDoTasks';
 
@@ -7,29 +7,30 @@ function App() {
   const [tasks, changeTasks] = useState([
     {
       id: 1,
-      text: 'jeden',
-      date: '2022-11-14',
+      text: 'first',
+      date: '2022-12-27',
       important: true,
       active: true,
       doneDate: null,
     },
     {
       id: 2,
-      text: 'dwa',
-      date: '2022-11-16',
+      text: 'second',
+      date: '2023-01-17',
       important: false,
       active: true,
       doneDate: null,
     },
     {
       id: 3,
-      text: 'trzy',
+      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, excepturi.',
       date: '2022-11-16',
       important: true,
       active: true,
       doneDate: null,
     },
   ]);
+  const [input, showInput] = useState(false);
 
   const deleteTask = (id) => {
     const tasksArr = [...tasks];
@@ -74,8 +75,11 @@ function App() {
 
   return (
     <>
-      <TaskInput add={addTask} />
+      <TaskInput add={addTask} show={input} cancel={showInput} />
       <ToDoTasks tasks={tasks} delete={deleteTask} change={changeStatus} />
+      <button onClick={() => showInput(!input)} className={styles.addBtn}>
+        +
+      </button>
     </>
   );
 }

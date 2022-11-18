@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+}
+
+.App {
+  text-align: center;
+}
+
+.addBtn {
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+  background-color: yellow;
+  color: black;
+  font-size: 3em;
+  font-weight: 700;
+  position: fixed;
+  bottom: 100px;
+  translate: (-50% 50%);
+}

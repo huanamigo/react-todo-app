@@ -1,6 +1,7 @@
 import React from 'react';
-import ToDoItem from '../ToDoItem/ToDoItem';
-import DoneItem from '../DoneItem/DoneItem';
+import ToDoItem from './ToDoItem/ToDoItem';
+import DoneItem from './DoneItem/DoneItem';
+import styles from './ToDoTasks.module.scss';
 
 function ToDoTasks(props) {
   const active = props.tasks.filter((task) => task.active);
@@ -26,14 +27,31 @@ function ToDoTasks(props) {
   ));
 
   return (
-    <>
-      <h1>TASKS</h1>
-      <div>{activeTasks.length > 0 ? activeTasks : <p>done</p>}</div>
+    <div className={styles.body}>
+      <h1 className={styles.h1}>TASKS</h1>
+      <div>
+        {activeTasks.length > 0 ? (
+          activeTasks
+        ) : (
+          <>
+            <hr />
+            <p>NOTHING HERE 😴</p>
+            <p>ADD SOMETHING!</p>
+            <hr />
+          </>
+        )}
+      </div>
 
       <p>COMPLETED TASKS ({doneTasks.length})</p>
-      <span>{doneTasks.length > 2 ? <p>max 2</p> : null}</span>
-      <div>{doneTasks.slice(0, 2)}</div>
-    </>
+      <span className={styles.trivial}>
+        {doneTasks.length > 3 ? (
+          <>
+            <p>UP TO 3 TASKS</p>
+          </>
+        ) : null}
+      </span>
+      <div>{doneTasks.slice(0, 3)}</div>
+    </div>
   );
 }
 

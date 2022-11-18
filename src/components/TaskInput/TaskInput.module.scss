@@ -1,0 +1,91 @@
+.hide {
+  display: none;
+}
+
+.h1 {
+  margin-top: 0;
+  padding-top: 30px;
+}
+
+.container {
+  position: relative;
+  background-color: #181818;
+  border: none;
+  border-radius: 5px;
+  margin: 5px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  gap: 10px;
+
+  & > * {
+    font-size: 20px;
+  }
+
+  input {
+    background-color: #181818;
+    border: none;
+    color: white;
+    text-align: center;
+  }
+}
+
+.dateContainer {
+  padding: 15px 0 15px 0 !important;
+}
+
+.priority {
+  accent-color: yellow;
+  height: 30px;
+  width: 30px;
+}
+
+.tiles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 10px;
+  gap: 10px;
+
+  & > * {
+    margin: 0;
+    margin-top: 5px;
+  }
+}
+
+.datePicker {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.buttons {
+  position: fixed;
+  display: grid;
+  bottom: 70px;
+  width: 100vw;
+  grid-template-columns: 1fr 1fr;
+  grid-row: 1fr;
+  gap: 30px;
+  padding: 0 30px;
+}
+
+.button {
+  background-color: yellow;
+  color: black;
+  height: 3em;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.show {
+  margin-top: 0;
+  padding: 0;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  z-index: 2137;
+}
