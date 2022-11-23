@@ -15,6 +15,10 @@ function ToDoTasks(props) {
     />
   ));
 
+  activeTasks.sort((a, b) => {
+    return new Date(a.props.task.date) - new Date(b.props.task.date);
+  });
+
   const done = props.tasks.filter((task) => !task.active);
 
   const doneTasks = done.map((task) => (
@@ -25,6 +29,10 @@ function ToDoTasks(props) {
       change={props.change}
     />
   ));
+
+  doneTasks.sort((a, b) => {
+    return b.props.task.doneDate - a.props.task.doneDate;
+  });
 
   return (
     <div className={styles.body}>

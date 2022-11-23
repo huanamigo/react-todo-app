@@ -64,11 +64,18 @@
   position: fixed;
   display: grid;
   bottom: 70px;
-  width: 100vw;
+  width: 100%;
+  max-width: 1200px;
   grid-template-columns: 1fr 1fr;
   grid-row: 1fr;
   gap: 30px;
   padding: 0 30px;
+}
+
+.errorMessage {
+  color: red;
+  font-style: italic;
+  font-size: 18px;
 }
 
 .button {
@@ -84,7 +91,8 @@
   margin-top: 0;
   padding: 0;
   position: absolute;
-  width: 100vw;
+  width: 100%;
+  max-width: 1200px;
   height: 100vh;
   background-color: black;
   z-index: 2137;

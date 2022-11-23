@@ -56,8 +56,6 @@ function App() {
   };
 
   const addTask = (text, date, important) => {
-    if (text.length < 2) return alert('dupa');
-
     const newTask = {
       id: Date.now(),
       text: text,
